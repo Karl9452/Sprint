@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.karl.sprint"
@@ -23,15 +24,50 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
 }
 
 dependencies {
+    def appDependencies = rootProject.ext.appDependencies
+    def testDependencies = rootProject.ext.testDependencies
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation appDependencies.kotlinCore
+    implementation appDependencies.appcompat
+    implementation appDependencies.ktx
+    implementation appDependencies.constraintlayout
+    implementation appDependencies.material
+    implementation appDependencies.recyclerView
+    implementation appDependencies.androidXAnnotation
+    implementation appDependencies.coroutines
+    implementation appDependencies.room
+    kapt appDependencies.roomAnnotation
+    implementation appDependencies.roomKtx
+    implementation appDependencies.lifecycleExtensions
+    implementation appDependencies.lifecycleViewModel
+    implementation appDependencies.lifecycleLiveData
+    implementation appDependencies.navigationFragment
+    implementation appDependencies.navigationUi
+    implementation appDependencies.multidex
+    implementation appDependencies.legacySupport
+    implementation appDependencies.retrofit
+    implementation appDependencies.gsonConverter
+    implementation appDependencies.adapterRxJava
+    implementation appDependencies.loggingInterceptor
+    implementation appDependencies.gson
+    implementation appDependencies.rxJava
+    implementation appDependencies.rxAndroid
+    implementation appDependencies.rxKotlin
+    implementation appDependencies.glide
+    kapt appDependencies.glideCompiler
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.extJunit
+    androidTestImplementation testDependencies.espresso
 }
