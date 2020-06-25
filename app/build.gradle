@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.karl.sprint"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
         versionName "1.0.0"
@@ -36,38 +36,36 @@ android {
 }
 
 dependencies {
-    def appDependencies = rootProject.ext.appDependencies
-    def testDependencies = rootProject.ext.testDependencies
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation appDependencies.kotlinCore
-    implementation appDependencies.appcompat
-    implementation appDependencies.ktx
-    implementation appDependencies.constraintlayout
-    implementation appDependencies.material
-    implementation appDependencies.recyclerView
-    implementation appDependencies.androidXAnnotation
-    implementation appDependencies.coroutines
-    implementation appDependencies.room
-    kapt appDependencies.roomAnnotation
-    implementation appDependencies.roomKtx
-    implementation appDependencies.lifecycleExtensions
-    implementation appDependencies.lifecycleViewModel
-    implementation appDependencies.lifecycleLiveData
-    implementation appDependencies.navigationFragment
-    implementation appDependencies.navigationUi
-    implementation appDependencies.multidex
-    implementation appDependencies.legacySupport
-    implementation appDependencies.retrofit
-    implementation appDependencies.gsonConverter
-    implementation appDependencies.adapterRxJava
-    implementation appDependencies.loggingInterceptor
-    implementation appDependencies.gson
-    implementation appDependencies.rxJava
-    implementation appDependencies.rxAndroid
-    implementation appDependencies.rxKotlin
-    implementation appDependencies.glide
-    kapt appDependencies.glideCompiler
-    testImplementation testDependencies.junit
-    androidTestImplementation testDependencies.extJunit
-    androidTestImplementation testDependencies.espresso
+    implementation AppDependencies.kotlinCore
+    implementation AppDependencies.appCompat
+    implementation AppDependencies.ktx
+    implementation AppDependencies.constraintLayout
+    implementation AppDependencies.material
+    implementation AppDependencies.recyclerView
+    implementation AppDependencies.androidXAnnotation
+    implementation AppDependencies.coroutines
+    implementation AppDependencies.room
+    kapt AppDependencies.roomAnnotation
+    implementation AppDependencies.roomKtx
+    implementation AppDependencies.lifecycleExtensions
+    implementation AppDependencies.lifecycleViewModel
+    implementation AppDependencies.lifecycleLiveData
+    implementation AppDependencies.navigationFragment
+    implementation AppDependencies.navigationUi
+    implementation AppDependencies.multidex
+    implementation AppDependencies.legacySupport
+    implementation AppDependencies.retrofit
+    implementation AppDependencies.gsonConverter
+    implementation AppDependencies.adapterRxJava
+    implementation AppDependencies.loggingInterceptor
+    implementation AppDependencies.gson
+    implementation AppDependencies.rxJava
+    implementation AppDependencies.rxAndroid
+    implementation AppDependencies.rxKotlin
+    implementation AppDependencies.glide
+    kapt AppDependencies.glideCompiler
+    testImplementation TestDependencies.junit
+    testImplementation TestDependencies.extJunit
+    androidTestImplementation TestDependencies.espresso
 }
