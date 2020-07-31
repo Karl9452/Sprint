@@ -8,6 +8,7 @@ import Version.extJunitVersion
 import Version.glideVersion
 import Version.gsonVersion
 import Version.junitVersion
+import Version.koinVersion
 import Version.kotlinVersion
 import Version.ktxVersion
 import Version.legacySupportVersion
@@ -68,6 +69,8 @@ object Version {
     const val rxKotlinVersion = "2.4.0"
 
     const val glideVersion = "4.11.0"
+
+    const val koinVersion = "2.1.6"
 }
 
 object AppDependencies {
@@ -126,6 +129,12 @@ object AppDependencies {
     const val glide = "com.github.bumptech.glide:glide:$glideVersion"
 
     const val glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
+
+    const val koinScope = "org.koin:koin-androidx-scope:$koinVersion"
+
+    const val koinViewModel = "org.koin:koin-androidx-viewmodel:$koinVersion"
+
+    const val koinFragment = "org.koin:koin-androidx-fragment:$koinVersion"
 }
 
 object TestDependencies {
@@ -135,4 +144,5 @@ object TestDependencies {
 
     const val espresso = "androidx.test.espresso:espresso-core:${espressoVersion}"
 
+    const val koinTest = "org.koin:koin-test:$koinVersion"
 }

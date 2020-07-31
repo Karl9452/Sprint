@@ -7,14 +7,16 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$Version.kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$Version.navigationVersion"
-
+        classpath "org.koin:koin-gradle-plugin:$Version.koinVersion"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle.kts files
     }
 }
+
+apply plugin: 'koin'
 
 allprojects {
     repositories {

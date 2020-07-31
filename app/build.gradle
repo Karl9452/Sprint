@@ -65,7 +65,12 @@ dependencies {
     implementation AppDependencies.rxKotlin
     implementation AppDependencies.glide
     kapt AppDependencies.glideCompiler
+    implementation AppDependencies.koinScope
+    implementation AppDependencies.koinViewModel
+    implementation AppDependencies.koinFragment
+
     testImplementation TestDependencies.junit
     testImplementation TestDependencies.extJunit
     androidTestImplementation TestDependencies.espresso
+    testImplementation TestDependencies.koinTest
 }
