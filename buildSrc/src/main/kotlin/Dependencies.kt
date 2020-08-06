@@ -13,7 +13,6 @@ import Version.kotlinVersion
 import Version.ktxVersion
 import Version.legacySupportVersion
 import Version.materialVersion
-import Version.multidexVersion
 import Version.navigationVersion
 import Version.okhttpLoggingVersion
 import Version.recyclerViewVersion
@@ -76,6 +75,8 @@ object Version {
 object AppDependencies {
     const val kotlinCore = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
+    const val kotlinReflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+
     const val appCompat = "androidx.appcompat:appcompat:$appcompatVersion"
 
     const val ktx = "androidx.core:core-ktx:$ktxVersion"
@@ -105,8 +106,8 @@ object AppDependencies {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
 
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:$navigationVersion"
-
-    const val multidex = "androidx.multidex:multidex:$multidexVersion"
+//    min sdk 21时用不到
+//    const val multidex = "androidx.multidex:multidex:$multidexVersion"
 
     const val legacySupport = "androidx.legacy:legacy-support-v4:$legacySupportVersion"
 

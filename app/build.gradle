@@ -18,11 +18,17 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "SERVICE_API_URL", String.format("\"%s\"", serviceBaseUrl)
+        }
+
         release {
             minifyEnabled true
+            buildConfigField "String", "SERVICE_API_URL", String.format("\"%s\"", serviceBaseUrl)
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -38,6 +44,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation AppDependencies.kotlinCore
+    implementation AppDependencies.kotlinReflect
     implementation AppDependencies.appCompat
     implementation AppDependencies.ktx
     implementation AppDependencies.constraintLayout
@@ -53,7 +60,6 @@ dependencies {
     implementation AppDependencies.lifecycleLiveData
     implementation AppDependencies.navigationFragment
     implementation AppDependencies.navigationUi
-    implementation AppDependencies.multidex
     implementation AppDependencies.legacySupport
     implementation AppDependencies.retrofit
     implementation AppDependencies.gsonConverter

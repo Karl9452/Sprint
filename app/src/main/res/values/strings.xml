@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sprint</string>
+    <string name="main_home">主页</string>
+    <string name="main_video">视频</string>
+    <string name="main_find">发现</string>
+    <string name="main_mine">我的</string>
 </resources>
